@@ -1,5 +1,7 @@
 '''
-Logical Processing Homework
+Logical Processing Homework (Module 4)
+BMI 6018-001
+completed by Michelle Gordon
 _________________________________________________________________________________________________________________________
 Problem 1: Stacking logical operators
 '''
@@ -18,6 +20,7 @@ Given the array influenza_genome, write code that uses for loops and if statemen
 Only print the section of the array that is modified after completing each operation. i.e only print index 300 of the array after 1.1 and only the first 30 elements after 1.2
 _________________________________________________________________________________________________________________________
 '''
+print("-------------------------------------------------------------------------------------")
 influenza_genome[300] = influenza_genome[300] + 1
 one_one = influenza_genome[300]
 # one_one = influenza_genome.insert(300, influenza_genome[300]+1)
@@ -41,7 +44,6 @@ for k in range(1,31):
         one_three.append(influenza_genome[-k])
 print("Question 1.3:\n", one_three)
     
-
 #1.4
 #NOTE: I wasn't sure if "between index 200 and 300" was inclusive or exclusive, I could see it being interpreted different ways.
 # so I wrote it as 200-300 below.
@@ -69,6 +71,7 @@ Given the array influenza_genome, write code using both for and while loops that
 _________________________________________________________________________________________________________________________
 '''
 #Question 2.1
+print("-------------------------------------------------------------------------------------")
 print("\nQuestion 2.1:")
 for i in range(234, 238):
     print(influenza_genome[i])
@@ -102,7 +105,40 @@ You are going to implement 3 funtions that will process the influenza_genome lis
 3.3 write a function that takes the output from the function from 3.2 as an argument, then only prints out every other item (ie there should only be 10 outputs)
 _________________________________________________________________________________________________________________________
 '''
+#Question 3.1
+print("-------------------------------------------------------------------------------------")
+print("\nQuestion 3.1")
+def three_one(list):
+    for i in range(0, len(list), 25):
+        print("Element ", i, ": ", list[i])
+        
+        
+three_one(influenza_genome)
 
+#Question 3.2
+print("Question 3.2")
+def three_two(list, y = 50):
+    twenty_nums = []
+    outputs = 0
+    for i in range(0, len(list), y):
+        if (outputs == 20):
+            break
+        else:
+            twenty_nums.append(list[i])
+            outputs += 1
+    return twenty_nums
+            
+print(three_two(influenza_genome, 13))
+
+#Question 3.3
+print("Question 3.3")
+def three_three(list):
+    i = 0
+    for i in range(0, len(list), 2):
+        print("Element ", i, ": ", list[i])
+        
+        
+three_three(three_two(influenza_genome, 5))
 
 '''
 _________________________________________________________________________________________________________________________
@@ -113,3 +149,23 @@ Write a function that implements the code from problem 1.4, then implements the 
 The function should create a modified version of the influenza_genome list as per 1.4, then print the section described in problem 2.3. 
 _________________________________________________________________________________________________________________________
 '''
+print("-------------------------------------------------------------------------------------")
+print("\nQuestion 4")
+def four(list):
+    one_four = []
+    for j in range(200, 301):
+        if ((list[j] % 3 == 0) and (list[j] % 5 == 0)):
+            list[j] = 10
+            one_four.append(influenza_genome[j])
+        else:
+            one_four.append(influenza_genome[j])
+    
+    for l in range(234, 238):
+        if (l == 236):
+            for m in range (7):
+                print("index ", l, ": ", list[l])
+        else:
+            print("index ", l, ": ", list[l])
+
+
+four(influenza_genome)
