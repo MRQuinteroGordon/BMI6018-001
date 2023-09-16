@@ -43,7 +43,7 @@ print("Question 1.3:\n", one_three)
     
 
 #1.4
-#NOTE: I wasn't sure if "between index 200 and 300" was inclusive or exclusive, I could see it being interpreted as 200-300, 201-299, or 200-299 
+#NOTE: I wasn't sure if "between index 200 and 300" was inclusive or exclusive, I could see it being interpreted different ways.
 # so I wrote it as 200-300 below.
 one_four = []
 for j in range(200, 301):
@@ -68,7 +68,26 @@ Given the array influenza_genome, write code using both for and while loops that
 2.3 Create a for loop that iterates over items index 234 through 237 and if the index is 236 print the item 7 times.
 _________________________________________________________________________________________________________________________
 '''
+#Question 2.1
+print("\nQuestion 2.1:")
+for i in range(234, 238):
+    print(influenza_genome[i])
+    
+#Question 2.2
+print("Question 2.2:")
+k = 234
+while (k <= 237):
+    print(influenza_genome[k])
+    k += 1
 
+#Question 2.3
+print("Question 2.3")
+for l in range(234, 238):
+    if (l == 236):
+        for m in range (7):
+            print(influenza_genome[l])
+    else:
+        print(influenza_genome[l])
 
 '''
 _________________________________________________________________________________________________________________________
